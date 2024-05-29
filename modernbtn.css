@@ -33,5 +33,5 @@
 .btn-pink:hover::before{
     cursor: pointer;
     transform: scaleX(1);
-    border-radius: 10px;
+    border-radius: 9px;
 }
