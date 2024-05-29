@@ -1,9 +1,7 @@
 *{
     margin: 0;padding: 0;box-sizing: border-box;
 }
-body{
-    /* background-color: black; */
-}
+
 #wrapper{
     height: 100vh;
     width: 100vw;
@@ -12,16 +10,28 @@ body{
     align-items: center;
 }
 .btn-pink{
-    /* border: 1px solid rgb(255, 183, 0); */
     background-color: #4681f4;
     color: white;
-    border-radius: 11px;
+    border-radius: 9px;
     padding:10px;
     font-size: 31px;
     box-shadow: 5px 5px 9px 0px #00003f;
+    position: relative;
+    z-index: 1;
 }
-.btn-pink:hover{
+.btn-pink::before{
+    content:"";
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    z-index: -1;border-radius: 9px;
+}
+
+.btn-pink:hover::before{
     cursor: pointer;
-    background-color: #55c2da;
-    animation: alternate 5s;
+    transform: scaleX(1);
+    border-radius: 10px;
 }
