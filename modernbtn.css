@@ -1,37 +1,51 @@
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+
+/* Reset default margin, padding, and box-sizing behavior */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#wrapper{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn-pink{
-    background-color: #4681f4;
-    color: white;
-    border-radius: 9px;
-    padding:10px;
-    font-size: 31px;
-    box-shadow: 5px 5px 9px 0px #00003f;
-    position: relative;
-    z-index: 1;
-}
-.btn-pink::before{
-    content:"";
-    background-color: #1f1f1f;
-    position: absolute;
-    top: 0;left: 0;right: 0;bottom: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: all 0.8s;
-    z-index: -1;border-radius: 9px;
+/* Style for a container with centered content */
+#wrapper {
+    height: 100vh; /* Set the container height to 100% of the viewport height */
+    width: 100vw; /* Set the container width to 100% of the viewport width */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
 }
 
-.btn-pink:hover::before{
-    cursor: pointer;
-    transform: scaleX(1);
-    border-radius: 9px;
+/* Button style with a pink background */
+.btn-pink {
+    background-color: #4681f4; /* Set the button background color */
+    color: white; /* Set the text color to white */
+    border-radius: 9px; /* Add rounded corners to the button */
+    padding: 10px; /* Add padding around the button text */
+    font-size: 31px; /* Set the font size */
+    box-shadow: 5px 5px 9px 0px #00003f; /* Add a subtle box shadow */
+    position: relative; /* Position the button relative to its container */
+    z-index: 1; /* Set the stacking order (above other elements) */
+}
+
+/* Pseudo-element for creating a background animation */
+.btn-pink::before {
+    content: ""; /* Create an empty pseudo-element */
+    background-color: #1f1f1f; /* Set the background color for the animation */
+    position: absolute; /* Position the pseudo-element absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0); /* Initially hide the pseudo-element */
+    transform-origin: left; /* Set the scaling origin to the left */
+    transition: all 0.8s; /* Add a smooth transition effect */
+    z-index: -1; /* Place the pseudo-element behind the button */
+    border-radius: 9px; /* Match the button's rounded corners */
+}
+
+/* Animation on button hover: reveal the background */
+.btn-pink:hover::before {
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    transform: scaleX(1); /* Scale the pseudo-element to reveal the background */
+    border-radius: 9px; /* Keep the rounded corners */
 }
